@@ -7,7 +7,7 @@ THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.
  
 Authors in chronological order of contribution:
 Tim Riedel
-Author 2
+Nathalie Garza
  
 Further Information:
 http://diystream.cns.utexas.edu/
@@ -17,11 +17,11 @@ Timothy Riedel
 triedel@utexas.edu
  
 Brief Description of Goal of Code:
-blah, blah, blah,
+The goal of this code is to ask the user four different diagnostic questions to determine if there symptoms correspond with a sinus headache or migraine.
  
 Known Issues:
-blah, blah, blah, blah
-Ignore this error message if you see it using the javaScript console: Error with Permissions-Policy header: Origin trial controlled feature not enabled: 'interest-cohort'.
+Distinguishing between sinus headache symptoms and migraines is challenging given they share some common symptoms. They present themselves in the same manner and can even be 
+triggered by the same factors. Extensive tests such as a sinus X-ray or CT scan are required for further confirmation.
 
 References:
 https://www.w3schools.com/w3css/default.asp
@@ -29,7 +29,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 -->
 	
 <head> 
-	<title>Hello World</title>  
+	<title> Sinus or Migraine: What Headache Are You Experiencing? </title>  
 ]	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<link rel="stylesheet" href="w3.css">
@@ -38,12 +38,27 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
 <script>
 
-	//YOUR JAVASCRIPT GOES HERE
-
+	var sinusCount = 0;
+	var migraineCount = 0;
+	//Initialized the variables that keep count for sinus headache symptoms and migraine symptoms.
+	function sinusAdd(){
+		sinusCount = sinusCount + 1;
+	}
+	function migraineAdd(){
+		miraineCount = migraineCount + 1;
+	//Increases the sinusCount and migraineCount by one when each function is ran.	
+	
+	function diagnosisPercentage(){
+		sinusPercentage = (sinusCount/4)*100
+		migrainePercentage = (migraineCount/4)*100
+		var result = document.getElementById("result")
+		result.innerHTML = "Probability it is a sinus headache =" + sinusPercentage + "%" + "<br> Probability it is a migraine =" + migrainePercentage + "%"
+	}
+	//Calculates the percentage that a user's symptoms are sinus related or migraines based on the user's response to the four questions.
 </script>	
 
 
-<!-- THIS STYLE CODE HELPS MAKE YOUR APP LOOK GOOD. PROBABLY DONT MESS WITH IT -->
+
 <style>	
 .body {
      margin: 0em;
@@ -64,12 +79,19 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
     left: 0vw;
     z-index: 1;
 }
+	
 </style>
 
 <body>
+<div id ="header" class="w3-container w3-flat-carrot">
+	<h1> Sinus Headache or Migraine?</h1>
+</div>
+
+<div id="content" class="w3-container">
+	<p> If you're experiencing head pain, answer a few yes or no questions about your symptoms. Afterwards, you will be provided a bit of insight into whether your discomfort may be related to sinus issues, characterized by facial pressure and congestion, or migraines, often featuring throbbing pain and additional symptoms like nausea and sensitivity to light. </p>
 	
-	<!-- HERE IS WHERE ALL OF YOUR HTML PAGES GO -->
-	REPLACE THIS TEXT
-	
+	<img src="https://www.scientificanimations.com/wp-content/uploads/2017/08/Headache-Sinus-vs-Migraine.jpg=" alt="Sinus vs Migraine">
+
+	<a href="#one" class="w3-btn w3-purple w3-round"> Get Started </a>
 </body>
 </html>
