@@ -49,8 +49,10 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	//Increases the sinusCount and migraineCount by one when each function is ran.	
 	
 	function diagnosisPercentage(){
-		var sinusPercentage = (sinusCount / 4)*100;
-		var migrainePercentage = (migraineCount / 4)*100;
+		console.log("diagnosisPercentage function called"); // Debugging statement
+		sinusPercentage = (sinusCount / 4) * 100;
+        	migrainePercentage = (migraineCount / 4) * 100;
+		
 		var result = document.getElementById("result");
 		result.innerHTML = "Probability it is a sinus headache =" + sinusPercentage + "%" + "<br> Probability it is a migraine =" + migrainePercentage + "%"
 	}
