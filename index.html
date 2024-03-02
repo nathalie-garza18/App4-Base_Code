@@ -30,7 +30,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	
 <head> 
 	<title> Sinus or Migraine: What Headache Are You Experiencing? </title>  
-]	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<link rel="stylesheet" href="w3.css">
 	<link rel="stylesheet" href="w3-colors-flat.css">
@@ -79,7 +79,12 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
     left: 0vw;
     z-index: 1;
 }
-	
+       	img, object{
+            	max-height:90%;
+        	max-width:90%;
+}
+</style>
+
 </style>
 
 <body>
@@ -90,8 +95,66 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 <div id="content" class="w3-container">
 	<p> If you're experiencing head pain, answer a few yes or no questions about your symptoms. Afterwards, you will be provided a bit of insight into whether your discomfort may be related to sinus issues, characterized by facial pressure and congestion, or migraines, often featuring throbbing pain and additional symptoms like nausea and sensitivity to light. </p>
 	
-	<img src="https://www.scientificanimations.com/wp-content/uploads/2017/08/Headache-Sinus-vs-Migraine.jpg alt="Sinus vs Migraine">
+	<img src="https://www.scientificanimations.com/wp-content/uploads/2017/08/Headache-Sinus-vs-Migraine.jpg" alt="Sinus vs Migraine">
 
 	<a href="#one" class="w3-btn w3-purple w3-round"> Get Started </a>
+
+<div class="page" id="one">
+	<div id="header" class="w3-container w3-flat-purple">
+		<h1>Question 1</h1>
+	</div>
+	
+	<div id="content" class="w3-container">
+		<p>Is the pain you are feeling a throbbing or pulsating sensation concentrated on one side of your head?</p>
+		<a href="#two" onclick="migraineAdd();" class="w3-btn w3-black">Yes</a>
+		<a href="#two"  onclick="sinusAdd();" class="w3-btn-black">No</a>
+	</div>
+</div>
+
+<div class="page" id="two">
+	<div id="header" class="w3-container w3-flat-purple">
+		<h1>Question 2</h1>
+	</div>
+	
+	<div id="content" class="w3-container">
+		<p>Besides the headache, do you experience nasal congestion, discharge, or facial tenderness?</p>
+		<a href="#three" onclick="sinusAdd();" class="w3-btn w3-black">Yes</a>
+		<a href="#three" onclick="migraineAdd();" class="w3-btn-black">No</a>
+	</div>
+</div>
+
+<div class="page" id="three">
+	<div id="header" class="w3-container w3-flat-purple">
+		<h1>Question 3</h1>
+	</div>
+
+	<div id="content" class="w3-container">
+		<p>Do you experience visual disturbances, such as flashing lights or zigzag patterns, shortly before or during your headaches?</p>
+		<a href="#four" onclick="migraineAdd();" class="w3-btn w3-black">Yes</a>
+		<a href="#four" onclick="sinusAdd();" class="w3-btn-black">No</a>
+	</div>
+</div>
+
+<div class="page" id="four">
+	<div id="header" class="w3-container w3-flat-purple">
+		<h1>Question 4</h1>
+	</div>
+	<div id="content" class="w3-container">
+		<p>Do your headaches typically respond well to over-the-counter analgesics or anti-inflammatory medications?</p>
+		<a href="#five" onclick="sinusAdd();" class="w3-btn w3-black">Yes</a>
+		<a href="#five" onclick="migraineAdd();" class="w3-btn-black">No</a>
+	</div>
+</div>
+
+<div class="page" id="five">
+	<div id="content" class="w3-container">
+		<button class="w3-button w3-blue" onclick="diagnosisPercentage()">View Results!</button>
+		<p id="result"></p>
+	</div>
+</div>
+
+<footer class="w3-bottom w3-container w3-flat-purple">
+	<p>DIY!</p>
+</footer>
 </body>
 </html>
