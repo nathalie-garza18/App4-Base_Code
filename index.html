@@ -39,24 +39,23 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
 	var sinusCount = 0;
 	var migraineCount = 0;
-	var sinusPercentage = 0;
-	var migrainePercentage = 0;
 	//Initialized the variables that keep count for sinus headache symptoms and migraine symptoms.
-	function sinusAdd() {
+	
+	function sinusAdd(){
     		console.log("Sinus button clicked");
     		sinusCount = sinusCount + 1;
 	}
 
-	function migraineAdd() {
+	function migraineAdd(){
    		 console.log("Migraine button clicked");
     		 migraineCount = migraineCount + 1;
 	}
-	//Increases the sinusCount and migraineCount by one when each function is ran.	
+	//Increases the sinusCount and migraineCount by one when each function is run.	
 	
 	function diagnosisPercentage(){
 		console.log("diagnosisPercentage function called"); 
-		sinusPercentage = (sinusCount / 4) * 100;
-        	migrainePercentage = (migraineCount / 4) * 100;
+		sinusPercent = (sinusCount/4) * 100;
+        	migrainePercent = (migraineCount/4) * 100;
 		
 		var result = document.getElementById("result");
 		result.innerHTML = "Probability it is a sinus headache =" + sinusPercentage + "%" + "<br> Probability it is a migraine =" + migrainePercentage + "%"
@@ -158,8 +157,12 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
 <!Results page and function diagnosisPercentage is called -->	
 <div class="page" id="five">
+	<div id="header" class="w3-container w3-flat-midnight-blue">
+		<h1>Results</h1>
+	</div>
+	
 	<div id="content" class="w3-container">
-		<button class="w3-button w3-blue" onclick="diagnosisPercentage()">View Results!</button>
+		<button class="w3-button w3-purple" onclick="diagnosisPercentage();">View Results!</button>
 		<p id="result"></p>
 	</div>
 </div>
